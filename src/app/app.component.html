@@ -3,19 +3,40 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>TEST TITLE</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   </head>
+  <header>
+    <section class="section">
+      <nav class="navbar is-white has-shadow is-fixed-top">
+        <!-- Search bar -->
+        <div class="navbar-item is-flex-grow-2" id="searchbar">
+            <input class="input" type="text" width="100" placeholder="Search">
+        </div>
+        <!-- Select search by -->
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="select">
+              <select>
+                <option>Name</option>
+                <option>Type</option>
+                <option>Location</option>
+              </select>
+            </div>
+          </div>
+          <div class="navbar-item">
+            <a href="post-form" class="button">Search</a>
+          </div>
+        </div>
+      </nav>
+    </section>
+  </header>
   <body>
-  <section class="section">
-    <div class="container">
-      <h1 class="title">
-        TEST HEADER
-      </h1>
-      <p class="subtitle">
-        TEST TEXT
-      </p>
-    </div>
-  </section>
+    <section class="section">
+      <div class="container">
+        <p class="subtitle">
+          TEST TEXT
+        </p>
+      </div>
+    </section>
   </body>
 </html>
