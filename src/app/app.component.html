@@ -7,35 +7,69 @@
   </head>
   <header>
     <section class="section">
-      <nav class="navbar is-white has-shadow is-fixed-top">
-        <!-- Search bar -->
-        <div class="navbar-item is-flex-grow-2" id="searchbar">
-            <input class="input" type="text" width="100" placeholder="Search">
+      <nav class="navbar is-light has-shadow is-fixed-top">
+        <!-- Logo -->
+        <div class="navbar-item">
+          <img src="../../assets/images/logo.png">
         </div>
-        <!-- Select search by -->
-        <div class="navbar-end">
+        <!-- Select specialty -->
+        <div class="navbar-item">
           <div class="navbar-item">
+            <label style="padding-right: 8px; font-size: 1.1em;">Specialty:</label>
             <div class="select">
-              <select>
-                <option>Name</option>
-                <option>Type</option>
-                <option>Location</option>
+              <select [(ngModel)]="filterSpecialty">
+                <option *ngFor="let specialty of specialties" [ngValue]="specialty">{{specialty}}</option>
               </select>
             </div>
           </div>
+        </div>
+        <!-- Select location -->
+        <div class="navbar-item">
           <div class="navbar-item">
-            <a href="post-form" class="button">Search</a>
+            <label style="padding-right: 8px; font-size: 1.1em;">Location:</label>
+            <div class="select">
+              <select [(ngModel)]="filterLocation">
+                <option *ngFor="let location of locations" [ngValue]="location">{{location}}</option>
+              </select>
+            </div>
           </div>
         </div>
+        <!-- Select rating -->
+        <div class="navbar-item">
+          <div class="navbar-item">
+            <label style="padding-right: 8px; font-size: 1.1em;">Minimum&nbsp;Rating:</label>
+            <input [(ngModel)]="filterRating" class="input" type="number" min="0" max="5" step="0.1">
+          </div>
+        </div>
+        <div class="navbar-item">
+          <a class="button" style="color: white; background-color: #00008B; font-size: 1.1em; font-weight: bold" (click)="applyFilter()">Apply Filter</a>
+        </div>   
       </nav>
     </section>
   </header>
   <body>
     <section class="section">
       <div class="container">
-        <p class="subtitle">
-          TEST TEXT
-        </p>
+        <ul *ngFor="let doc of filteredDoctors">
+          <a (click)="showSimilar(doc)">
+            <div class="doctor-card">
+              <img class="doctor-image" [src]="doc.imageUrl">
+              <div class="doctor-info">
+                <div class="row">
+                    <span class="doctor-name">Dr. {{doc.name}}</span>
+                    <span class="doctor-rating">{{doc.rating}}/5</span>
+                    <span class="doctor-address">{{doc.displayedAddress}}</span>
+                </div>
+                <div class="row">
+                  <span class="doctor-specialty">{{doc.specialty}}</span>
+                </div>
+                <div class="row">
+                  <span class="doctor-location">{{doc.location}}</span>
+                </div>
+              </div>
+            </div>
+          </a>
+        </ul>
       </div>
     </section>
   </body>

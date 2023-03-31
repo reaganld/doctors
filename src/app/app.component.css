@@ -1,0 +1,64 @@
+.doctor-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.doctor-image {
+  width: 120px;
+  height: 120px;
+  margin-right: 15px;
+  border-radius: 50%;
+}
+
+.doctor-info {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.2rem;
+}
+
+.row {
+  display: flex;
+  padding: 2px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.doctor-name {
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+
+.doctor-rating {
+  color: rgb(40, 30, 150);
+  font-weight: bold;
+  font-size: 1.4rem;
+  padding-left: 8px;
+}
+
+.doctor-specialty {
+  font-style: italic;
+}
+
+.doctor-location {
+  font-style: italic;
+}
+
+.doctor-address {
+  padding-left: 25px;
+}
+
+a {
+  color: black;
+}
+  
+  
+  
+  
+  
+  
