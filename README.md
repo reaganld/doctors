@@ -1,4 +1,4 @@
-# Doctors
+# DocFind
 For the Veradigm take home assessment.
 
 Displays a list of NC doctors. To finish in a reasonable time, this application uses a list of example doctors sourced from zocdoc.com.
